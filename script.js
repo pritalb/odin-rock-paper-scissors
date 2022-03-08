@@ -41,16 +41,41 @@ function game() {
 		'no winner': 0,
 	};
 
-	for (let index = 0; index < 5; index++) {
-		let player_hand = prompt(` Round ${index}: choose a hand (from: rock, paper or scissor).`);
-		let compPlay = computerPlay();
+	let win_score = 5;
 
-		let round_result = playRound(player_hand, compPlay);
+	let rock_btn = document.createElement('button');
+	rock_btn.innerText = 'rock';
+	rock_btn.addEventListener('on_click', () => {
+		playRound(rock_btn.innerText);
+	})
+
+	let paper_btn = document.createElement('button');
+	paper_btn.innerText = 'paper';
+	paper_btn.addEventListener('on_click', () => {
+		playRound(paper_btn.innerText);
+	})
+
+	let scissor_btn = document.createElement('button');
+	scissor_btn.innerText = 'scissor';
+	scissor_btn.addEventListener('on_click', () => {
+		playRound(scissor_btn.innerText);
+	})
+
+	let play_btns = document.createElement('div');
+	play_btns.append(rock_btn, paper_btn, scissor_btn);
+
+	document.body.append(play_btns);
+
+	// for (let index = 0; index < 5; index++) {
+	// 	let player_hand = prompt(` Round ${index}: choose a hand (from: rock, paper or scissor).`);
+	// 	let compPlay = computerPlay();
+
+	// 	let round_result = playRound(player_hand, compPlay);
 		
-		score[round_result['winner']]++;
-		console.log(`Round ${index} result: ${round_result['result']}`);
-		console.log(`current score => player : ${score['player']}, computer : ${score['computer']}`);
-	}
+	// 	score[round_result['winner']]++;
+	// 	console.log(`Round ${index} result: ${round_result['result']}`);
+	// 	console.log(`current score => player : ${score['player']}, computer : ${score['computer']}`);
+	// }
 
 	if (score['player'] > score['computer']) {
 		console.log('Player wins.')
