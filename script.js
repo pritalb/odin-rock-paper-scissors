@@ -3,7 +3,7 @@ function getRandomInt(maxNum) {
 }
 
 function computerPlay() {
-	let hands = ['rock', 'paper', 'scissor'];
+	let hands = ['Rock', 'Paper', 'Scissor'];
 	let compPlay = getRandomInt(3);
 
 	return hands[compPlay];
@@ -20,15 +20,15 @@ function playRound(playerSelection) {
 			result['winner'] = 'no winner';
 	}
 
-	if ((playerPlay === 'rock' && computerSelection === 'scissor') || (playerPlay === 'paper' && computerSelection === 'rock') || (playerPlay === 'scissor' && computerSelection === 'paper')) {
+	if ((playerPlay === 'Rock' && computerSelection === 'Scissor') || (playerPlay === 'Paper' && computerSelection === 'Rock') || (playerPlay === 'Scissor' && computerSelection === 'Paper')) {
 		win = true;
 	}
 
 	if (win) {
-		result['result'] = `You Win! ${playerPlay} beats ${computerSelection}`;
+		result['result'] = `Yeah! You Win! ${playerPlay} beats ${computerSelection}`;
 		result['winner'] = 'player';
 	} else {
-		result['result'] = `You Lose! ${computerSelection} beats ${playerPlay}`;
+		result['result'] = `Oops! You Lose! ${computerSelection} beats ${playerPlay}`;
 		result['winner'] = 'computer';
 	}
 
@@ -38,7 +38,7 @@ function playRound(playerSelection) {
 function reset() {
 	let player_score_ui = document.querySelector('#player_score');
 	let computer_score_ui = document.querySelector('#computer_score');
-	let result_ui = document.querySelector('#result');
+	let result_ui = document.querySelector('#round_result');
 	let win_ui = document.querySelector('#win');
 
 	score = {
@@ -61,7 +61,7 @@ function game(button_name) {
 	
 	let player_score_ui = document.querySelector('#player_score');
 	let computer_score_ui = document.querySelector('#computer_score');
-	let result_ui = document.querySelector('#result');
+	let result_ui = document.querySelector('#round_result');
 	let win_ui = document.querySelector('#win');
 
 	let round_result = playRound(button_name);
@@ -83,27 +83,25 @@ function game(button_name) {
 
 function main() {
 	let rock_btn = document.createElement('button');
-	rock_btn.innerText = 'rock';
+	rock_btn.innerText = 'Rock';
 	rock_btn.addEventListener('click', () => {
 		game(rock_btn.innerText);
 	})
 
 	let paper_btn = document.createElement('button');
-	paper_btn.innerText = 'paper';
+	paper_btn.innerText = 'Paper';
 	paper_btn.addEventListener('click', () => {
 		game(paper_btn.innerText);
 	})
 
 	let scissor_btn = document.createElement('button');
-	scissor_btn.innerText = 'scissor';
+	scissor_btn.innerText = 'Scissor';
 	scissor_btn.addEventListener('click', () => {
 		game(scissor_btn.innerText);
 	})
 
-	let play_btns = document.createElement('div');
+	let play_btns = document.querySelector('#buttons');
 	play_btns.append(rock_btn, paper_btn, scissor_btn);
-
-	document.body.append(play_btns);
 
 	reset();
 

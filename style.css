@@ -1,0 +1,78 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f5f5f5;
+	color: #3c3c3c;
+	margin: 0;
+}
+
+#header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#result_text {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3rem;
+	height: 70vh;
+}
+
+#footer {
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+	background-color: #c1839f;
+	color: #f5f5f5;
+	padding: 1em;
+	margin-bottom: 0;
+}
+
+#scores {
+	display: flex;
+	gap: 1rem;
+}
+
+#buttons {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	height: 10vh;
+}
+
+#round_result {
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+	font-weight: bolder;
+}
+
+#win {
+	display: flex;
+	justify-content: center;
+	font-size: 1.8rem;
+}
+
+#prompt {
+	display: flex;
+	justify-content: center;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+}
