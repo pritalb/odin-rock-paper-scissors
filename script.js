@@ -11,7 +11,6 @@ function computerPlay() {
 
 function playRound(playerSelection) {
 	let win = false;
-	let playerPlay = playerSelection.toLowerCase();
 	let result = {};
 	let computerSelection = computerPlay();
 
@@ -76,9 +75,6 @@ function game(button_name) {
 	} else if (score['computer'] == 5) {
 		win_ui.innerText = 'Computer wins.';
 	}
-
-	console.log(score);
-	
 }
 
 function main() {
@@ -104,8 +100,6 @@ function main() {
 	play_btns.append(rock_btn, paper_btn, scissor_btn);
 
 	reset();
-
-	console.log('js working');
 }
 
 let score = {};
