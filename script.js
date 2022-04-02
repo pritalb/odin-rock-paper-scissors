@@ -9,7 +9,7 @@ function computerPlay() {
 	return hands[compPlay];
 }
 
-function playRound(playerSelection) {
+function playRound(playerPlay) {
 	let win = false;
 	let result = {};
 	let computerSelection = computerPlay();
