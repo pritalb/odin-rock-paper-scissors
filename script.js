@@ -9,9 +9,10 @@ function computerPlay() {
 	return hands[compPlay];
 }
 
-function playRound(playerPlay) {
+function playRound(playerSelection) {
 	let win = false;
 	let result = {};
+	let playerPlay = playerSelection;
 	let computerSelection = computerPlay();
 
 	if (playerPlay === computerSelection) {
